@@ -4,7 +4,7 @@ $.ajax({
     datatype: 'json',
     data: {
         'apikey'    : '6757dded',
-        's'         : 'batman'
+        's'         : 'avengers'
     },
     success: function(result) {
         if(result.Response == "True") {
@@ -12,14 +12,14 @@ $.ajax({
             $.each(movies, function(i, data) {
                 $('#movie-list').append(`
                 <div class="col-md-3 mb-3">
-                    <div class="card">
+                    <div class="card bg-dark text-white">
                         <a href="#">
                         <img src="${data.Poster}" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">${data.Title}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">${data.Year}</h6>
-                            <a href="#" class="card-link see-detail" data-toggle="modal" data-target="#exampleModal" data-id="${data.imdbID}">See Details</a>
+                            <h6 class="card-subtitle mb-2 text-white-50">${data.Year}</h6>
+                            <a href="#" class="card-link see-detail" data-toggle="modal" data-target="#exampleModal" data-id="${data.imdbID}"><button class="btn btn-warning">See Details</button></a>
                         </div>
                     </div>
                 </div>
@@ -109,13 +109,13 @@ $('#movie-list').on('click','.see-detail', function() {
                                 <img src="${movie.Poster}" class="img-fluid">
                             </div>
                             <div class="col-md-8">
-                                <ul class="list-group">
-                                    <li class="list-group-item"><h2>${movie.Title}</h2></li>
-                                    <li class="list-group-item"><strong>Released Date :</strong> ${movie.Released}</li>
-                                    <li class="list-group-item"><strong>Genre :</strong> ${movie.Genre}</li>
-                                    <li class="list-group-item"><strong>Director :</strong> ${movie.Director}</li>
-                                    <li class="list-group-item"><strong>Actors :</strong> ${movie.Actors}</li>
-                                    <li class="list-group-item"><strong>Plot Story :</strong>: ${movie.Plot}</li>
+                                <ul class="list-group text-white">
+                                    <li class="list-group-item bg-dark border-warning"><h2>${movie.Title}</h2></li>
+                                    <li class="list-group-item bg-dark border-warning"><strong>Released Date :</strong> ${movie.Released}</li>
+                                    <li class="list-group-item bg-dark border-warning"><strong>Genre :</strong> ${movie.Genre}</li>
+                                    <li class="list-group-item bg-dark border-warning"><strong>Director :</strong> ${movie.Director}</li>
+                                    <li class="list-group-item bg-dark border-warning"><strong>Actors :</strong> ${movie.Actors}</li>
+                                    <li class="list-group-item bg-dark border-warning"><strong>Plot Story :</strong>: ${movie.Plot}</li>
                                 </ul>
                             </div>
                         </div>
